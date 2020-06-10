@@ -10,6 +10,7 @@ from store import coupon_calculations as coupon
 
 
 class MyTestCase(unittest.TestCase):
+    '''This test set check for proper final price using a value under $10'''
     def test_price_under_10_5_cash_10_percent(self):
         assert round(coupon.calculate_price(14.99, 5, 10), 2) == 15.84
     def test_price_under_10_5_cash_15_percent(self):
@@ -23,6 +24,7 @@ class MyTestCase(unittest.TestCase):
     def test_price_under_10_10_cash_20_percent(self):
         assert round(coupon.calculate_price(14.99, 10, 20), 2) == 10.54
 
+    '''This test set check for proper final price using a value under $30'''
     def test_price_between_10_and_30_5_cash_10_percent(self):
         assert round(coupon.calculate_price(29.99, 5, 10), 2) == 32.27
     def test_price_between_10_and_30_5_cash_15_percent(self):
@@ -36,6 +38,7 @@ class MyTestCase(unittest.TestCase):
     def test_price_between_10_and_30_10_cash_20_percent(self):
         assert round(coupon.calculate_price(29.99, 10, 20), 2) == 25.38
 
+    '''This test set check for proper final price using a value under $50'''
     def test_price_between_30_and_50_5_cash_10_percent(self):
         assert round(coupon.calculate_price(49.99, 5, 10), 2) == 55.59
     def test_price_between_30_and_50_5_cash_15_percent(self):
@@ -49,6 +52,7 @@ class MyTestCase(unittest.TestCase):
     def test_price_between_30_and_50_10_cash_20_percent(self):
         assert round(coupon.calculate_price(49.99, 10, 20), 2) == 46.58
 
+    '''This test set check for proper final price using a value over $50'''
     def test_price_over_50_5_cash_10_percent(self):
         assert round(coupon.calculate_price(75, 5, 10), 2) == 66.78
     def test_price_over_50_5_cash_15_percent(self):
