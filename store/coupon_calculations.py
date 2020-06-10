@@ -26,6 +26,9 @@ def calculate_price(price, cash_coupon, percent_coupon):
             return final_total
         final_total = (running_total + UNDER_50_SHIPPING) * TAX_RATE
         return final_total
+    else:
+        final_total = running_total * TAX_RATE
+        return final_total
 
 if __name__ == '__main__':
     calculate_price(10,10,10)
