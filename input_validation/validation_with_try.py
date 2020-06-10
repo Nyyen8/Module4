@@ -78,8 +78,8 @@ def get_score_two():
             continue
 
         if user_score < 0:
-            # raise ValueError
-            print("Please enter an age of 0 or above")
+            raise ValueError
+            # print("Please enter an age of 0 or above")
             continue
         if user_score > 100:
             print("Please enter an age of 100 or below")
