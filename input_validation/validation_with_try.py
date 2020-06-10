@@ -7,9 +7,9 @@ Program to get user name, age, and three scores. Scores
 are averaged and all input is checked. Results are printed.
 """
 def average():
-    score1 = get_score()
-    score2 = get_score()
-    score3 = get_score()
+    score1 = get_score_one()
+    score2 = get_score_two()
+    score3 = get_score_three()
     return (score1+score2+score3)/3
 '''Function to call get_score func to collect three scores, then returns their average'''
 
@@ -48,7 +48,7 @@ def get_age():
     return age
 '''Function to accept user input for age and check it for a minimum amount'''
 
-def get_score():
+def get_score_one():
     while True:
         try:
             user_score = int(input("Please enter score: "))
@@ -57,8 +57,8 @@ def get_score():
             continue
 
         if user_score < 0:
-            raise ValueError
-            # print("Please enter an age of 0 or above")
+            # raise ValueError
+            print("Please enter an age of 0 or above")
             continue
         if user_score > 100:
             print("Please enter an age of 100 or below")
@@ -66,15 +66,62 @@ def get_score():
         else:
             break
     return user_score
-'''Function to accept user input for a test score, then verify it is between 0 and 100'''
+'''A version of the get_score function cludged to get it to throw value errors for negative numbers instead
+of requesting valid input from user.'''
+
+def get_score_two():
+    while True:
+        try:
+            user_score = int(input("Please enter score: "))
+        except ValueError:
+            print("Invalid score. Please use only numbers between 1 and 100")
+            continue
+
+        if user_score < 0:
+            # raise ValueError
+            print("Please enter an age of 0 or above")
+            continue
+        if user_score > 100:
+            print("Please enter an age of 100 or below")
+            continue
+        else:
+            break
+    return user_score
+'''A version of the get_score function cludged to get it to throw value errors for negative numbers instead
+of requesting valid input from user.'''
+
+def get_score_three():
+    while True:
+        try:
+            user_score = int(input("Please enter score: "))
+        except ValueError:
+            print("Invalid score. Please use only numbers between 1 and 100")
+            continue
+
+        if user_score < 0:
+            # raise ValueError
+            print("Please enter an age of 0 or above")
+            continue
+        if user_score > 100:
+            print("Please enter an age of 100 or below")
+            continue
+        else:
+            break
+    return user_score
+'''A version of the get_score function cludged to get it to throw value errors for negative numbers instead
+of requesting valid input from user.'''
 
 
 if __name__ == '__main__':
     user_input_name = get_name()
     user_age = get_age()
-    ave_score = average()
-    print(user_input_name + ', ' + str(user_age) +
-          ' years old had an average score of ' +
-          str(round(ave_score, 2)))
+    try:
+        ave_score = average()
+        print(user_input_name + ', ' + str(user_age) +
+              ' years old had an average score of ' +
+              str(round(ave_score, 2)))
+    except ValueError:
+        print("Someone did something dumb so I'm gonna crash")
+
 '''Main method that calls get_name(), get_age(), and average(). All results are saved as variables this are
 then printed with additional text'''

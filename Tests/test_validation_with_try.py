@@ -14,10 +14,21 @@ from input_validation import validation_with_try as avg
 
 class FunctionTestCase(unittest.TestCase):
 
-    def test_average_negative_input(self):
+    def test_average_negative_first_input(self):
         with mock.patch('builtins.input', side_effect=[-85, 90, 95]):
-            self.assertRaises(ValueError)
-        '''This test checks to see if the average func works properly by mocking three inputs'''
+            with self.assertRaises(ValueError):
+                avg.average()
+        '''This test checks to see if the average func throws a valueError if the first entry is negative'''
 
+    # def test_average_negative_second_input(self):
+    #     with mock.patch('builtins.input', side_effect=[85, -90, 95]):
+    #         self.assertRaises(ValueError)
+    #     '''This test checks to see if the average func throws a valueError if the second entry is negative'''
+    #
+    # def test_average_negative_third_input(self):
+    #     with mock.patch('builtins.input', side_effect=[85, 90, -95]):
+    #         self.assertRaises(ValueError)
+    #     '''This test checks to see if the average func throws a valueError if the third entry is negative'''
+    #
 if __name__ == '__main__':
     unittest.main()
