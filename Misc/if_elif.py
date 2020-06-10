@@ -6,7 +6,9 @@ Last Modified: 06/09/2020
 Program to ask which level of a subscription service they want to sign up for.
 """
 
+'''Function to accept user input for subscription level, then prints cost.'''
 def offer_sub_list():
+    """Initial print statement. Doesn't repeat."""
     print("Thank you for your interested in our Monthly Subscription Box!\n"
                            "Please Select from the following levels to learn more.\n"
                            "Platinum\n"
@@ -15,8 +17,13 @@ def offer_sub_list():
                            "Bronze\n"
                            "Free Trial\n"
                            "")
+
+    """Main while loop that continues until user choose to terminate program"""
     while True:
+        """Secondary while loop that continues until user chooses valid membership option"""
         while True:
+            """if-elif statements that return various levels of service based on user input, or an error message if 
+                            they choose outside of the available option."""
             choice = input()
             if (choice == "Platinum") or (choice =="platinum"):
                 print("Our platinum level is our best, costing $60 a month.\n"
@@ -43,6 +50,7 @@ def offer_sub_list():
                       "")
                 continue
 
+        """Prompt for input that determines if program continues."""
         continue_choice = input("Would you like to look at another level? 'Y' to continue, any other key to exit.\n"
                       "")
         if (continue_choice == "y") or (continue_choice == "yes") or (continue_choice == "Yes") or (continue_choice == "Y"):
@@ -57,9 +65,6 @@ def offer_sub_list():
         else:
             print("Thanks for you interest.")
             break
-
-'''Function to accept user input for subscription level, then prints cost.'''
-
 
 if __name__ == '__main__':
     offer_sub_list()
