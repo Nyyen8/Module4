@@ -24,17 +24,17 @@ class MyTestCase(unittest.TestCase):
         assert round(coupon.calculate_price(14.99, 10, 20), 2) == 10.54
 
     def test_price_between_10_and_30_5_cash_10_percent(self):
-        assert round(coupon.calculate_price(29.99, 5, 10), 2) == 15.84
+        assert round(coupon.calculate_price(29.99, 5, 10), 2) == 32.27
     def test_price_between_10_and_30_5_cash_15_percent(self):
-        assert round(coupon.calculate_price(29.99, 5, 15), 2) == 15.31
+        assert round(coupon.calculate_price(29.99, 5, 15), 2) == 30.94
     def test_price_between_10_and_30_5_cash_20_percent(self):
-        assert round(coupon.calculate_price(29.99, 5, 20), 2) == 14.78
+        assert round(coupon.calculate_price(29.99, 5, 20), 2) == 29.62
     def test_price_between_10_and_30_10_cash_10_percent(self):
-        assert round(coupon.calculate_price(29.99, 10, 10), 2) == 11.07
+        assert round(coupon.calculate_price(29.99, 10, 10), 2) == 27.50
     def test_price_between_10_and_30_10_cash_15_percent(self):
-        assert round(coupon.calculate_price(29.99, 10, 15), 2) == 10.8
+        assert round(coupon.calculate_price(29.99, 10, 15), 2) == 26.44
     def test_price_between_10_and_30_10_cash_20_percent(self):
-        assert round(coupon.calculate_price(29.99, 10, 20), 2) == 10.54
+        assert round(coupon.calculate_price(29.99, 10, 20), 2) == 25.38
 
 if __name__ == '__main__':
     unittest.main()

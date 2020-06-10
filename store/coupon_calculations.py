@@ -17,17 +17,14 @@ def calculate_price(price, cash_coupon, percent_coupon):
     global UNDER_50_SHIPPING
 
     running_total = (price - cash_coupon) * ((100 - percent_coupon)/100)
-    if running_total <= 10.00:
-        final_total = (running_total + UNDER_10_SHIPPING) * TAX_RATE
-        return final_total
-        if 30 > running_total >= 10:
-            final_total = (running_total + UNDER_30_SHIPPING) * TAX_RATE
+    if running_total < 30:
+        if running_total < 10.00:
+            final_total = (running_total + UNDER_10_SHIPPING) * TAX_RATE
             return final_total
+        final_total = (running_total + UNDER_30_SHIPPING) * TAX_RATE
+        return final_total
+
+
 
 if __name__ == '__main__':
-    print(round(calculate_price(14.99, 5, 10), 2))
-    print(round(calculate_price(14.99, 5, 15), 2))
-    print(round(calculate_price(14.99, 5, 20), 2))
-    print(round(calculate_price(14.99, 10, 10), 2))
-    print(round(calculate_price(14.99, 10, 15), 2))
-    print(round(calculate_price(14.99, 10, 20), 2))
+    calculate_price(10,10,10)
