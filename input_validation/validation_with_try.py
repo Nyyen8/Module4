@@ -121,7 +121,7 @@ if __name__ == '__main__':
               ' years old had an average score of ' +
               str(round(ave_score, 2)))
     except ValueError:
-        print("Someone did something dumb so I'm gonna crash")
+        print("Someone did something dumb so I'm gonna crash. Peace.")
 
 '''Main method that calls get_name(), get_age(), and average(). All results are saved as variables this are
 then printed with additional text'''
