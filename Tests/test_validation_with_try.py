@@ -20,11 +20,12 @@ class FunctionTestCase(unittest.TestCase):
                 avg.average()
         '''This test checks to see if the average func throws a valueError if the first entry is negative'''
 
-    # def test_average_negative_second_input(self):
-    #     with mock.patch('builtins.input', side_effect=[85, -90, 95]):
-    #         self.assertRaises(ValueError)
-    #     '''This test checks to see if the average func throws a valueError if the second entry is negative'''
-    #
+    def test_average_negative_second_input(self):
+        with mock.patch('builtins.input', side_effect=[85, -90, 95]):
+            with self.assertRaises(ValueError):
+                avg.average()
+        '''This test checks to see if the average func throws a valueError if the second entry is negative'''
+
     # def test_average_negative_third_input(self):
     #     with mock.patch('builtins.input', side_effect=[85, 90, -95]):
     #         self.assertRaises(ValueError)
