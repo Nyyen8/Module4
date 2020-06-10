@@ -11,30 +11,30 @@ from store import coupon_calculations as coupon
 
 class MyTestCase(unittest.TestCase):
     def test_price_under_10_5_cash_10_percent(self):
-        assert(coupon.calculate_price(5, 5, 10), 90)
+        assert(round(coupon.calculate_price(9.99, 5, 10), 2), 11.07)
     def test_price_under_10_5_cash_15_percent(self):
-        assert(coupon.calculate_price(5, 5, 15), 90)
+        assert(coupon.calculate_price(9.99, 5, 15), 90)
     def test_price_under_10_5_cash_20_percent(self):
-        assert(coupon.calculate_price(5, 5, 20), 90)
+        assert(coupon.calculate_price(9.99, 5, 20), 90)
     def test_price_under_10_10_cash_10_percent(self):
-        assert(coupon.calculate_price(5, 10, 10), 90)
+        assert(coupon.calculate_price(9.99, 10, 10), 90)
     def test_price_under_10_10_cash_15_percent(self):
-        assert(coupon.calculate_price(5, 10, 15), 90)
+        assert(coupon.calculate_price(9.99, 10, 15), 90)
     def test_price_under_10_10_cash_20_percent(self):
-        assert(coupon.calculate_price(5, 10, 20), 90)
+        assert(coupon.calculate_price(9.99, 10, 20), 90)
 
-    def test_price_under_10_5_cash_10_percent(self):
-        assert(coupon.calculate_price(5, 5, 10), 90)
-    def test_price_under_10_5_cash_15_percent(self):
-        assert(coupon.calculate_price(5, 5, 15), 90)
-    def test_price_under_10_5_cash_20_percent(self):
-        assert(coupon.calculate_price(5, 5, 20), 90)
-    def test_price_under_10_10_cash_10_percent(self):
-        assert(coupon.calculate_price(5, 10, 10), 90)
-    def test_price_under_10_10_cash_15_percent(self):
-        assert(coupon.calculate_price(5, 10, 15), 90)
-    def test_price_under_10_10_cash_20_percent(self):
-        assert(coupon.calculate_price(5, 10, 20), 90)
+    # def test_price_under_10_5_cash_10_percent(self):
+    #     assert(coupon.calculate_price(5, 5, 10), 90)
+    # def test_price_under_10_5_cash_15_percent(self):
+    #     assert(coupon.calculate_price(5, 5, 15), 90)
+    # def test_price_under_10_5_cash_20_percent(self):
+    #     assert(coupon.calculate_price(5, 5, 20), 90)
+    # def test_price_under_10_10_cash_10_percent(self):
+    #     assert(coupon.calculate_price(5, 10, 10), 90)
+    # def test_price_under_10_10_cash_15_percent(self):
+    #     assert(coupon.calculate_price(5, 10, 15), 90)
+    # def test_price_under_10_10_cash_20_percent(self):
+    #     assert(coupon.calculate_price(5, 10, 20), 90)
 
 if __name__ == '__main__':
     unittest.main()
