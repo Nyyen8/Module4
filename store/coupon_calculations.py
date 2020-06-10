@@ -26,5 +26,6 @@ def calculate_price(price, cash_coupon, percent_coupon):
 
 
 
+
 if __name__ == '__main__':
     calculate_price(10,10,10)
