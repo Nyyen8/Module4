@@ -49,5 +49,18 @@ class MyTestCase(unittest.TestCase):
     def test_price_between_30_and_50_10_cash_20_percent(self):
         assert round(coupon.calculate_price(49.99, 10, 20), 2) == 46.58
 
+    def test_price_over_50_5_cash_10_percent(self):
+        assert round(coupon.calculate_price(75, 5, 10), 2) == 66.78
+    def test_price_over_50_5_cash_15_percent(self):
+        assert round(coupon.calculate_price(75, 5, 15), 2) == 63.07
+    def test_price_over_50_5_cash_20_percent(self):
+        assert round(coupon.calculate_price(75, 5, 20), 2) == 59.36
+    def test_price_over_50_10_cash_10_percent(self):
+        assert round(coupon.calculate_price(75, 10, 10), 2) == 62.01
+    def test_price_over_50_10_cash_15_percent(self):
+        assert round(coupon.calculate_price(75, 10, 15), 2) == 58.57
+    def test_price_over_50_10_cash_20_percent(self):
+        assert round(coupon.calculate_price(75, 10, 20), 2) == 55.12
+
 if __name__ == '__main__':
     unittest.main()
